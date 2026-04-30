@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- CrispVoice app icon — master 1024×1024 -->
+  <!-- Concept: five evenly-spaced voice-burst bars in the warm signal color
+       on a deep ink background, forming a gentle "breathing hill," with
+       a pair of 4-point sparkles in the upper area suggesting the AI
+       polish step that's central to the product. -->
+
+  <defs>
+    <!-- Background: subtle radial depth so the icon doesn't look flat at large sizes -->
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#1A1F28"/>
+      <stop offset="60%" stop-color="#0E1116"/>
+      <stop offset="100%" stop-color="#070A0E"/>
+    </radialGradient>
+
+    <!-- Bars: warm signal with very subtle vertical gradient for life -->
+    <linearGradient id="bar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D08A"/>
+      <stop offset="60%" stop-color="#F5C36C"/>
+      <stop offset="100%" stop-color="#E8AE4F"/>
+    </linearGradient>
+
+    <!-- Sparkle: warm-white core with a soft cream outer for a subtle glow -->
+    <radialGradient id="sparkle" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#FFF3D0"/>
+      <stop offset="100%" stop-color="#FAD98C"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Solid square (iOS auto-applies the rounded mask) -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!--
+    Five bars, centered horizontally, vertically centered around y=512.
+    Bar width: 96px. Gap between bars: 64px. Total width = 5*96 + 4*64 = 736px.
+    Left edge of first bar: (1024 - 736) / 2 = 144.
+    Heights (gentle hill): 360, 520, 640, 520, 360.
+    Centered vertically -> y = 512 - height/2.
+    Corner radius: 48 (half-width — fully rounded ends).
+  -->
+
+  <g>
+    <!-- Bar 1: x=144, h=360, y=332 -->
+    <rect x="144" y="332" width="96" height="360" rx="48" ry="48" fill="url(#bar)"/>
+
+    <!-- Bar 2: x=304, h=520, y=252 -->
+    <rect x="304" y="252" width="96" height="520" rx="48" ry="48" fill="url(#bar)"/>
+
+    <!-- Bar 3 (peak): x=464, h=640, y=192 -->
+    <rect x="464" y="192" width="96" height="640" rx="48" ry="48" fill="url(#bar)"/>
+
+    <!-- Bar 4: x=624, h=520, y=252 -->
+    <rect x="624" y="252" width="96" height="520" rx="48" ry="48" fill="url(#bar)"/>
+
+    <!-- Bar 5: x=784, h=360, y=332 -->
+    <rect x="784" y="332" width="96" height="360" rx="48" ry="48" fill="url(#bar)"/>
+  </g>
+
+  <!--
+    Sparkles. 4-point stars (concave-sided diamond × diamond) sitting in the
+    empty area above the bars. Path geometry: outer point at distance R,
+    inner waist points at R/4, traced in 8 vertices. Two sparkles for visual
+    rhythm — primary on the right (upper-right corner of the icon, larger),
+    secondary on the left (smaller, lower).
+
+    Primary: cx=820, cy=160, R=78  →  outer points at (820, 82), (898, 160),
+                                       (820, 238), (742, 160)
+    Secondary: cx=204, cy=232, R=42 →  outer points at (204, 190), (246, 232),
+                                       (204, 274), (162, 232)
+  -->
+
+  <g fill="url(#sparkle)">
+    <!-- Primary 4-point sparkle (upper right) -->
+    <path d="M 820,82 L 840,140 L 898,160 L 840,180 L 820,238 L 800,180 L 742,160 L 800,140 Z"/>
+
+    <!-- Secondary 4-point sparkle (upper left, smaller) -->
+    <path d="M 204,190 L 215,221 L 246,232 L 215,243 L 204,274 L 193,243 L 162,232 L 193,221 Z"/>
+  </g>
+</svg>

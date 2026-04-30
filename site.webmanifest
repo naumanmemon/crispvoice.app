@@ -1,0 +1,12 @@
+{
+  "name": "CrispVoice",
+  "short_name": "CrispVoice",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0D11",
+  "theme_color": "#0A0D11",
+  "icons": [
+    { "src": "/assets/icon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
